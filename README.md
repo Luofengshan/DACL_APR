@@ -474,6 +474,3 @@ DACL\_APR\_PROJECT/
 
 ---
 
-
-A: 将数据整理为 `data/bug\_fix\_pairs.json` 格式，每条记录包含字段：`function\_name`, `buggy\_code`, `fixed\_code`, `defect\_type`, `defect\_type\_id`, `split`。
-
