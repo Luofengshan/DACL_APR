@@ -1,8 +1,8 @@
-\# DACL-APR: 基于缺陷感知对比学习的检索增强自动化程序修复
+# DACL-APR: 基于缺陷感知对比学习的检索增强自动化程序修复
 
 
 
-\## 项目简介
+## 项目简介
 
 
 
@@ -10,23 +10,23 @@
 
 
 
-1\. \*\*缺陷感知对比学习框架\*\* — 利用缺陷类型标签构造语义有意义的正负样本对，学习缺陷模式感知的代码表示
+1. **缺陷感知对比学习框架** — 利用缺陷类型标签构造语义有意义的正负样本对，学习缺陷模式感知的代码表示
 
-2\. \*\*Token-Graph 双流编码器\*\* — 通过交叉注意力融合代码的序列语义（Token流）与AST结构语义（Graph流）
+2. **Token-Graph 双流编码器** — 通过交叉注意力融合代码的序列语义（Token流）与AST结构语义（Graph流）
 
-3\. \*\*跨模态对齐损失\*\* — 将缺陷代码空间与修复代码空间进行语义对齐（类CLIP思想）
-
-
-
-\---
+3. **跨模态对齐损失** — 将缺陷代码空间与修复代码空间进行语义对齐（类CLIP思想）
 
 
 
-\## 环境配置
+---
 
 
 
-\### 硬件要求
+## 环境配置
+
+
+
+### 硬件要求
 
 
 
@@ -42,13 +42,13 @@
 
 
 
-\- 无GPU时自动使用CPU训练，并切换为轻量Token编码器（SimpleTokenEncoder）
+- 无GPU时自动使用CPU训练，并切换为轻量Token编码器（SimpleTokenEncoder）
 
-\- 有GPU时自动加载CodeBERT预训练模型，效果更优
+- 有GPU时自动加载CodeBERT预训练模型，效果更优
 
 
 
-\### 软件依赖
+### 软件依赖
 
 
 
@@ -70,35 +70,35 @@ tqdm >= 4.60.0
 
 
 
-\### 安装步骤
+### 安装步骤
 
 
 
 ```bash
 
-\# 1. 进入项目目录
+# 1. 进入项目目录
 
 cd DACL\_APR\_PROJECT
 
-\# 2. 安装核心依赖
+# 2. 安装核心依赖
 
 pip install -r requirements.txt
 
 
 
-\# 3. 如有GPU，安装对应版本的PyTorch
+# 3. 如有GPU，安装对应版本的PyTorch
 
-\# pip install torch --index-url https://download.pytorch.org/whl/cu118
+# pip install torch --index-url https://download.pytorch.org/whl/cu118
 
 
 
-\# 4. 安装transformers（用于CodeBERT支持）
+# 4. 安装transformers（用于CodeBERT支持）
 
 pip install transformers
 
 
 
-\# 5. 验证环境
+# 5. 验证环境
 
 python -c "import torch; print(f'PyTorch {torch.\_\_version\_\_}, CUDA: {torch.cuda.is\_available()}')"
 
@@ -112,15 +112,15 @@ python -c "from transformers import AutoModel; print('CodeBERT: OK')"
 
 
 
-\---
+---
 
 
 
-\## 快速开始
+## 快速开始
 
 
 
-\### 一键运行全部实验
+### 一键运行全部实验
 
 
 
@@ -152,19 +152,19 @@ python run\_all.py
 
 
 
-\### 分步运行
+### 分步运行
 
 
 
 ```bash
 
-\# 仅生成数据
+# 仅生成数据
 
 python generate\_data.py
 
 
 
-\# 训练指定模式（dual / token\_only / graph\_only）
+# 训练指定模式（dual / token\_only / graph\_only）
 
 python train.py                    # 默认dual模式，15个epoch
 
@@ -172,7 +172,7 @@ python -c "from train import train; train(mode='token\_only', epochs=10)"
 
 
 
-\# 评估已训练的模型
+# 评估已训练的模型
 
 python -c "
 
@@ -188,7 +188,7 @@ evaluate(model, mode='dual')
 
 
 
-\# 仅运行消融实验
+# 仅运行消融实验
 
 python evaluate.py
 
@@ -198,11 +198,11 @@ python evaluate.py
 
 
 
-\---
+---
 
 
 
-\## 代码文件结构
+## 代码文件结构
 
 
 
@@ -340,11 +340,11 @@ DACL\_APR\_PROJECT/
 
 
 
-\---
+---
 
 
 
-\## 核心模型架构
+## 核心模型架构
 
 
 
@@ -432,11 +432,11 @@ DACL\_APR\_PROJECT/
 
 
 
-\---
+---
 
 
 
-\## 关键超参数说明
+## 关键超参数说明
 
 
 
@@ -472,48 +472,7 @@ DACL\_APR\_PROJECT/
 
 
 
-\---
-
-
-
-\## 常见问题
-
-
-
-\*\*Q: 运行报错 `No module named 'transformers'`？\*\*
-
-
-
-A: 安装transformers：`pip install transformers`。如安装失败，程序自动降级为轻量编码器，不影响运行。
-
-
-
-\*\*Q: CodeBERT加载失败，显示 `Could not import module 'RobertaModel'`？\*\*
-
-
-
-A: 需要安装完整依赖：`pip install transformers torch`。部分环境下transformers与PyTorch版本不兼容，可尝试：`pip install transformers==4.30.2`。降级模式下仍可正常运行实验。
-
-
-
-\*\*Q: GPU可用但显示 `CUDA: False`？\*\*
-
-
-
-A: 需安装CUDA版PyTorch：`pip install torch --index-url https://download.pytorch.org/whl/cu118`（按实际CUDA版本选择）。
-
-
-
-\*\*Q: 如何调整训练轮次和批大小？\*\*
-
-
-
-A: 修改 `config.py` 中的 `NUM\_EPOCHS` 和 `BATCH\_SIZE`，或在调用时传参：`train(epochs=20)`。
-
-
-
-\*\*Q: 如何在自己的数据集上运行？\*\*
-
+---
 
 
 A: 将数据整理为 `data/bug\_fix\_pairs.json` 格式，每条记录包含字段：`function\_name`, `buggy\_code`, `fixed\_code`, `defect\_type`, `defect\_type\_id`, `split`。
