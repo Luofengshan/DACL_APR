@@ -1,0 +1,27 @@
+{
+  "TF-IDF": {
+    "MRR": 0.4489195210247842,
+    "Recall@5": 0.028954185876696046,
+    "nDCG@5": 0.21146032100797948,
+    "BLEU-4": 0.20107091165849178,
+    "Exact Match": 0.0,
+    "Top-5 Hit Rate": 0.0
+  },
+  "CodeBERT (no fine-tune)": {
+    "MRR": 0,
+    "Recall@5": 0,
+    "nDCG@5": 0,
+    "BLEU-4": 0,
+    "Exact Match": 0,
+    "Top-5 Hit Rate": 0
+  },
+  "Ours (Dual)": {
+    "MRR": 0.4614817271938014,
+    "Recall@5": 0.02809087421958614,
+    "nDCG@5": 0.2206463487315021,
+    "BLEU-4": 0.147907966397705,
+    "Exact Match": 0.0,
+    "Top-5 Hit Rate": 0.0,
+    "mode": "dual"
+  }
+}

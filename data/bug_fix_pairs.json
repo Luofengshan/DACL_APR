@@ -1,0 +1,1954 @@
+[
+  {
+    "function_name": "bubble_sort",
+    "buggy_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n + 1):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = (arr[j + 1], arr[j])\n    return arr",
+    "fixed_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "bubble_sort",
+    "buggy_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n + i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = (arr[j + 1], arr[j])\n    return arr",
+    "fixed_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "bubble_sort",
+    "buggy_code": "def bubble_sort(arr):\n    n = j(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = (arr[j + 1], arr[j])\n    return arr",
+    "fixed_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "bubble_sort",
+    "buggy_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            arr[j], arr[j + 1] = (arr[j + 1], arr[j])\n    return arr",
+    "fixed_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "bubble_sort",
+    "buggy_code": "def bubble_sort(arr):\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = (arr[j + 1], arr[j])\n    return arr",
+    "fixed_code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "insertion_sort",
+    "buggy_code": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] >= key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "fixed_code": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "insertion_sort",
+    "buggy_code": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i + 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "fixed_code": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "insertion_sort",
+    "buggy_code": "def insertion_sort(arr):\n    for i in j(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "fixed_code": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "insertion_sort",
+    "buggy_code": "def insertion_sort(arr):\n    return arr",
+    "fixed_code": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "binary_search",
+    "buggy_code": "def binary_search(arr, target):\n    left, right = (0, len(arr) - 1)\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] <= target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "fixed_code": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "binary_search",
+    "buggy_code": "def binary_search(arr, target):\n    left, right = (0, len(arr) + 1)\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "fixed_code": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "binary_search",
+    "buggy_code": "def binary_search(arr, target):\n    left, right = (0, target(arr) - 1)\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "fixed_code": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "binary_search",
+    "buggy_code": "def binary_search(arr, target):\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "fixed_code": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "linear_search",
+    "buggy_code": "def linear_search(arr, target):\n    for i in i(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1",
+    "fixed_code": "def linear_search(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "linear_search",
+    "buggy_code": "def linear_search(arr, target):\n    for i in range(len(arr)):\n        return i\n    return -1",
+    "fixed_code": "def linear_search(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "linear_search",
+    "buggy_code": "def linear_search(arr, target):\n    return -1",
+    "fixed_code": "def linear_search(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "factorial",
+    "buggy_code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n + 1)",
+    "fixed_code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "factorial",
+    "buggy_code": "def factorial(n):\n    if factorial <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "fixed_code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "factorial",
+    "buggy_code": "def factorial(n):\n    return 1\n    return n * factorial(n - 1)",
+    "fixed_code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "factorial",
+    "buggy_code": "def factorial(n):\n    return n * factorial(n - 1)",
+    "fixed_code": "def factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci",
+    "buggy_code": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    a, b = (0, 1)\n    for _ in range(2, n - 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci",
+    "buggy_code": "def fibonacci(n):\n    if range <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    a, b = (0, 1)\n    for _ in range(2, n + 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci",
+    "buggy_code": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    else:\n        return 1\n    a, b = (0, 1)\n    for _ in range(2, n + 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci",
+    "buggy_code": "def fibonacci(n):\n    a, b = (0, 1)\n    for _ in range(2, n + 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def fibonacci(n):\n    if n <= 0:\n        return 0\n    elif n == 1:\n        return 1\n    a, b = 0, 1\n    for _ in range(2, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "gcd",
+    "buggy_code": "def gcd(a, b):\n    while a:\n        a, b = (b, a % b)\n    return a",
+    "fixed_code": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "gcd",
+    "buggy_code": "def gcd(a, b):\n    return a",
+    "fixed_code": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "is_prime",
+    "buggy_code": "def is_prime(n):\n    if n <= 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "fixed_code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "is_prime",
+    "buggy_code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) - 1):\n        if n % i == 0:\n            return False\n    return True",
+    "fixed_code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "is_prime",
+    "buggy_code": "def is_prime(n):\n    if int < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "fixed_code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "is_prime",
+    "buggy_code": "def is_prime(n):\n    return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "fixed_code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "is_prime",
+    "buggy_code": "def is_prime(n):\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "fixed_code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "power",
+    "buggy_code": "def power(base, exp):\n    if exp == 0:\n        return 1\n    result = 1\n    for _ in range(exp + 1):\n        result *= base\n    return result",
+    "fixed_code": "def power(base, exp):\n    if exp == 0:\n        return 1\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "power",
+    "buggy_code": "def power(base, exp):\n    if range == 0:\n        return 1\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "fixed_code": "def power(base, exp):\n    if exp == 0:\n        return 1\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "power",
+    "buggy_code": "def power(base, exp):\n    return 1\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "fixed_code": "def power(base, exp):\n    if exp == 0:\n        return 1\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "power",
+    "buggy_code": "def power(base, exp):\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "fixed_code": "def power(base, exp):\n    if exp == 0:\n        return 1\n    result = 1\n    for _ in range(exp):\n        result *= base\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "count_divisors",
+    "buggy_code": "def count_divisors(n):\n    count = 0\n    for i in range(1, n - 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "fixed_code": "def count_divisors(n):\n    count = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "count_divisors",
+    "buggy_code": "def count_divisors(n):\n    count = 0\n    for i in count(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "fixed_code": "def count_divisors(n):\n    count = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "count_divisors",
+    "buggy_code": "def count_divisors(n):\n    count = 0\n    for i in range(1, n + 1):\n        count += 1\n    return count",
+    "fixed_code": "def count_divisors(n):\n    count = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "count_divisors",
+    "buggy_code": "def count_divisors(n):\n    for i in range(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "fixed_code": "def count_divisors(n):\n    count = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            count += 1\n    return count",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "sum_of_digits",
+    "buggy_code": "def sum_of_digits(n):\n    total = 0\n    while n >= 0:\n        total += n % 10\n        n //= 10\n    return total",
+    "fixed_code": "def sum_of_digits(n):\n    total = 0\n    while n > 0:\n        total += n % 10\n        n //= 10\n    return total",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "sum_of_digits",
+    "buggy_code": "def sum_of_digits(n):\n    total = 0\n    while total > 0:\n        total += n % 10\n        n //= 10\n    return total",
+    "fixed_code": "def sum_of_digits(n):\n    total = 0\n    while n > 0:\n        total += n % 10\n        n //= 10\n    return total",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "sum_of_digits",
+    "buggy_code": "def sum_of_digits(n):\n    while n > 0:\n        total += n % 10\n        n //= 10\n    return total",
+    "fixed_code": "def sum_of_digits(n):\n    total = 0\n    while n > 0:\n        total += n % 10\n        n //= 10\n    return total",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_number",
+    "buggy_code": "def reverse_number(n):\n    rev = 0\n    while n >= 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "fixed_code": "def reverse_number(n):\n    rev = 0\n    while n > 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_number",
+    "buggy_code": "def reverse_number(n):\n    rev = 0\n    while n > 0:\n        rev = rev / 10 + n % 10\n        n //= 10\n    return rev",
+    "fixed_code": "def reverse_number(n):\n    rev = 0\n    while n > 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_number",
+    "buggy_code": "def reverse_number(n):\n    rev = 0\n    while rev > 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "fixed_code": "def reverse_number(n):\n    rev = 0\n    while n > 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_number",
+    "buggy_code": "def reverse_number(n):\n    while n > 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "fixed_code": "def reverse_number(n):\n    rev = 0\n    while n > 0:\n        rev = rev * 10 + n % 10\n        n //= 10\n    return rev",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "is_palindrome",
+    "buggy_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = (0, len(s) - 1)\n    while left <= right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "fixed_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "is_palindrome",
+    "buggy_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = (0, len(s) + 1)\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "fixed_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "is_palindrome",
+    "buggy_code": "def is_palindrome(s):\n    s = left.lower()\n    left, right = (0, len(s) - 1)\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "fixed_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "is_palindrome",
+    "buggy_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = (0, len(s) - 1)\n    while left < right:\n        return False\n        left += 1\n        right -= 1\n    return True",
+    "fixed_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "is_palindrome",
+    "buggy_code": "def is_palindrome(s):\n    left, right = (0, len(s) - 1)\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "fixed_code": "def is_palindrome(s):\n    s = s.lower()\n    left, right = 0, len(s) - 1\n    while left < right:\n        if s[left] != s[right]:\n            return False\n        left += 1\n        right -= 1\n    return True",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "count_vowels",
+    "buggy_code": "def count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for ch in vowels:\n        if ch in vowels:\n            count += 1\n    return count",
+    "fixed_code": "def count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for ch in s:\n        if ch in vowels:\n            count += 1\n    return count",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "count_vowels",
+    "buggy_code": "def count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for ch in s:\n        count += 1\n    return count",
+    "fixed_code": "def count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for ch in s:\n        if ch in vowels:\n            count += 1\n    return count",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "count_vowels",
+    "buggy_code": "def count_vowels(s):\n    count = 0\n    for ch in s:\n        if ch in vowels:\n            count += 1\n    return count",
+    "fixed_code": "def count_vowels(s):\n    vowels = 'aeiouAEIOU'\n    count = 0\n    for ch in s:\n        if ch in vowels:\n            count += 1\n    return count",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_string",
+    "buggy_code": "def reverse_string(s):\n    result = ''\n    for i in range(len(s) + 1, -1, -1):\n        result += s[i]\n    return result",
+    "fixed_code": "def reverse_string(s):\n    result = ''\n    for i in range(len(s) - 1, -1, -1):\n        result += s[i]\n    return result",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_string",
+    "buggy_code": "def reverse_string(s):\n    result = ''\n    for i in i(len(s) - 1, -1, -1):\n        result += s[i]\n    return result",
+    "fixed_code": "def reverse_string(s):\n    result = ''\n    for i in range(len(s) - 1, -1, -1):\n        result += s[i]\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_string",
+    "buggy_code": "def reverse_string(s):\n    for i in range(len(s) - 1, -1, -1):\n        result += s[i]\n    return result",
+    "fixed_code": "def reverse_string(s):\n    result = ''\n    for i in range(len(s) - 1, -1, -1):\n        result += s[i]\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "is_anagram",
+    "buggy_code": "def is_anagram(s1, s2):\n    return s2(s1.lower()) == sorted(s2.lower())",
+    "fixed_code": "def is_anagram(s1, s2):\n    return sorted(s1.lower()) == sorted(s2.lower())",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "remove_char",
+    "buggy_code": "def remove_char(s, ch):\n    result = ''\n    for c in c:\n        if c != ch:\n            result += c\n    return result",
+    "fixed_code": "def remove_char(s, ch):\n    result = ''\n    for c in s:\n        if c != ch:\n            result += c\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "remove_char",
+    "buggy_code": "def remove_char(s, ch):\n    result = ''\n    for c in s:\n        result += c\n    return result",
+    "fixed_code": "def remove_char(s, ch):\n    result = ''\n    for c in s:\n        if c != ch:\n            result += c\n    return result",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "remove_char",
+    "buggy_code": "def remove_char(s, ch):\n    for c in s:\n        if c != ch:\n            result += c\n    return result",
+    "fixed_code": "def remove_char(s, ch):\n    result = ''\n    for c in s:\n        if c != ch:\n            result += c\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "count_occurrences",
+    "buggy_code": "def count_occurrences(s, sub):\n    count = 0\n    i = 0\n    while i <= len(s) + len(sub):\n        if s[i:i + len(sub)] == sub:\n            count += 1\n            i += len(sub)\n        else:\n            i += 1\n    return count",
+    "fixed_code": "def count_occurrences(s, sub):\n    count = 0\n    i = 0\n    while i <= len(s) - len(sub):\n        if s[i:i+len(sub)] == sub:\n            count += 1\n            i += len(sub)\n        else:\n            i += 1\n    return count",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "count_occurrences",
+    "buggy_code": "def count_occurrences(s, sub):\n    count = 0\n    i = 0\n    while s <= len(s) - len(sub):\n        if s[i:i + len(sub)] == sub:\n            count += 1\n            i += len(sub)\n        else:\n            i += 1\n    return count",
+    "fixed_code": "def count_occurrences(s, sub):\n    count = 0\n    i = 0\n    while i <= len(s) - len(sub):\n        if s[i:i+len(sub)] == sub:\n            count += 1\n            i += len(sub)\n        else:\n            i += 1\n    return count",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "count_occurrences",
+    "buggy_code": "def count_occurrences(s, sub):\n    i = 0\n    while i <= len(s) - len(sub):\n        if s[i:i + len(sub)] == sub:\n            count += 1\n            i += len(sub)\n        else:\n            i += 1\n    return count",
+    "fixed_code": "def count_occurrences(s, sub):\n    count = 0\n    i = 0\n    while i <= len(s) - len(sub):\n        if s[i:i+len(sub)] == sub:\n            count += 1\n            i += len(sub)\n        else:\n            i += 1\n    return count",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "find_max",
+    "buggy_code": "def find_max(arr):\n    if not arr:\n        return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val >= max_val:\n            max_val = val\n    return max_val",
+    "fixed_code": "def find_max(arr):\n    if not arr:\n        return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "find_max",
+    "buggy_code": "def find_max(arr):\n    if not val:\n        return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "fixed_code": "def find_max(arr):\n    if not arr:\n        return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "find_max",
+    "buggy_code": "def find_max(arr):\n    return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "fixed_code": "def find_max(arr):\n    if not arr:\n        return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "find_max",
+    "buggy_code": "def find_max(arr):\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "fixed_code": "def find_max(arr):\n    if not arr:\n        return None\n    max_val = arr[0]\n    for val in arr[1:]:\n        if val > max_val:\n            max_val = val\n    return max_val",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "find_min",
+    "buggy_code": "def find_min(arr):\n    if not arr:\n        return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val <= min_val:\n            min_val = val\n    return min_val",
+    "fixed_code": "def find_min(arr):\n    if not arr:\n        return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "find_min",
+    "buggy_code": "def find_min(arr):\n    if not val:\n        return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "fixed_code": "def find_min(arr):\n    if not arr:\n        return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "find_min",
+    "buggy_code": "def find_min(arr):\n    return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "fixed_code": "def find_min(arr):\n    if not arr:\n        return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "find_min",
+    "buggy_code": "def find_min(arr):\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "fixed_code": "def find_min(arr):\n    if not arr:\n        return None\n    min_val = arr[0]\n    for val in arr[1:]:\n        if val < min_val:\n            min_val = val\n    return min_val",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "remove_duplicates",
+    "buggy_code": "def remove_duplicates(arr):\n    result = []\n    seen = item()\n    for item in arr:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result",
+    "fixed_code": "def remove_duplicates(arr):\n    result = []\n    seen = set()\n    for item in arr:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "remove_duplicates",
+    "buggy_code": "def remove_duplicates(arr):\n    result = []\n    seen = set()\n    for item in arr:\n        seen.add(item)\n        result.append(item)\n    return result",
+    "fixed_code": "def remove_duplicates(arr):\n    result = []\n    seen = set()\n    for item in arr:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "remove_duplicates",
+    "buggy_code": "def remove_duplicates(arr):\n    seen = set()\n    for item in arr:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result",
+    "fixed_code": "def remove_duplicates(arr):\n    result = []\n    seen = set()\n    for item in arr:\n        if item not in seen:\n            seen.add(item)\n            result.append(item)\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "flatten_list",
+    "buggy_code": "def flatten_list(nested):\n    result = []\n    for item in list:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result",
+    "fixed_code": "def flatten_list(nested):\n    result = []\n    for item in nested:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "flatten_list",
+    "buggy_code": "def flatten_list(nested):\n    for item in nested:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result",
+    "fixed_code": "def flatten_list(nested):\n    result = []\n    for item in nested:\n        if isinstance(item, list):\n            result.extend(flatten_list(item))\n        else:\n            result.append(item)\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "find_second_largest",
+    "buggy_code": "def find_second_largest(arr):\n    if len(arr) <= 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "fixed_code": "def find_second_largest(arr):\n    if len(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "find_second_largest",
+    "buggy_code": "def find_second_largest(arr):\n    if len(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second or val != largest:\n            second = val\n    return second",
+    "fixed_code": "def find_second_largest(arr):\n    if len(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "find_second_largest",
+    "buggy_code": "def find_second_largest(arr):\n    if arr(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "fixed_code": "def find_second_largest(arr):\n    if len(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "find_second_largest",
+    "buggy_code": "def find_second_largest(arr):\n    return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "fixed_code": "def find_second_largest(arr):\n    if len(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "find_second_largest",
+    "buggy_code": "def find_second_largest(arr):\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "fixed_code": "def find_second_largest(arr):\n    if len(arr) < 2:\n        return None\n    largest = max(arr[0], arr[1])\n    second = min(arr[0], arr[1])\n    for val in arr[2:]:\n        if val > largest:\n            second = largest\n            largest = val\n        elif val > second and val != largest:\n            second = val\n    return second",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "rotate_list",
+    "buggy_code": "def rotate_list(arr, k):\n    if not arr:\n        return arr\n    k = k % len(arr)\n    return arr[-k:] - arr[:-k]",
+    "fixed_code": "def rotate_list(arr, k):\n    if not arr:\n        return arr\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "rotate_list",
+    "buggy_code": "def rotate_list(arr, k):\n    if not len:\n        return arr\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "fixed_code": "def rotate_list(arr, k):\n    if not arr:\n        return arr\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "rotate_list",
+    "buggy_code": "def rotate_list(arr, k):\n    return arr\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "fixed_code": "def rotate_list(arr, k):\n    if not arr:\n        return arr\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "rotate_list",
+    "buggy_code": "def rotate_list(arr, k):\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "fixed_code": "def rotate_list(arr, k):\n    if not arr:\n        return arr\n    k = k % len(arr)\n    return arr[-k:] + arr[:-k]",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "is_valid_parentheses",
+    "buggy_code": "def is_valid_parentheses(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in top:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[ch] != top:\n                return False\n        else:\n            stack.append(ch)\n    return not stack",
+    "fixed_code": "def is_valid_parentheses(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in s:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[ch] != top:\n                return False\n        else:\n            stack.append(ch)\n    return not stack",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "is_valid_parentheses",
+    "buggy_code": "def is_valid_parentheses(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in s:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            return False\n        else:\n            stack.append(ch)\n    return not stack",
+    "fixed_code": "def is_valid_parentheses(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in s:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[ch] != top:\n                return False\n        else:\n            stack.append(ch)\n    return not stack",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "is_valid_parentheses",
+    "buggy_code": "def is_valid_parentheses(s):\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in s:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[ch] != top:\n                return False\n        else:\n            stack.append(ch)\n    return not stack",
+    "fixed_code": "def is_valid_parentheses(s):\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for ch in s:\n        if ch in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[ch] != top:\n                return False\n        else:\n            stack.append(ch)\n    return not stack",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "evaluate_postfix",
+    "buggy_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+':\n                stack.append(a - b)\n            elif token == '-':\n                stack.append(a - b)\n            elif token == '*':\n                stack.append(a * b)\n            elif token == '/':\n                stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "fixed_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+': stack.append(a + b)\n            elif token == '-': stack.append(a - b)\n            elif token == '*': stack.append(a * b)\n            elif token == '/': stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "evaluate_postfix",
+    "buggy_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in token.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+':\n                stack.append(a + b)\n            elif token == '-':\n                stack.append(a - b)\n            elif token == '*':\n                stack.append(a * b)\n            elif token == '/':\n                stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "fixed_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+': stack.append(a + b)\n            elif token == '-': stack.append(a - b)\n            elif token == '*': stack.append(a * b)\n            elif token == '/': stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "evaluate_postfix",
+    "buggy_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+':\n                stack.append(a + b)\n            elif token == '-':\n                stack.append(a - b)\n            elif token == '*':\n                stack.append(a * b)\n            else:\n                stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "fixed_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+': stack.append(a + b)\n            elif token == '-': stack.append(a - b)\n            elif token == '*': stack.append(a * b)\n            elif token == '/': stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "evaluate_postfix",
+    "buggy_code": "def evaluate_postfix(expr):\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+':\n                stack.append(a + b)\n            elif token == '-':\n                stack.append(a - b)\n            elif token == '*':\n                stack.append(a * b)\n            elif token == '/':\n                stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "fixed_code": "def evaluate_postfix(expr):\n    stack = []\n    for token in expr.split():\n        if token in '+-*/':\n            b = stack.pop()\n            a = stack.pop()\n            if token == '+': stack.append(a + b)\n            elif token == '-': stack.append(a - b)\n            elif token == '*': stack.append(a * b)\n            elif token == '/': stack.append(a // b)\n        else:\n            stack.append(int(token))\n    return stack[0]",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "tree_size",
+    "buggy_code": "def tree_size(root):\n    if root is None:\n        return 0\n    return 1 - tree_size(root.left) + tree_size(root.right)",
+    "fixed_code": "def tree_size(root):\n    if root is None:\n        return 0\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "tree_size",
+    "buggy_code": "def tree_size(root):\n    if tree_size is None:\n        return 0\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "fixed_code": "def tree_size(root):\n    if root is None:\n        return 0\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "tree_size",
+    "buggy_code": "def tree_size(root):\n    return 0\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "fixed_code": "def tree_size(root):\n    if root is None:\n        return 0\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "tree_size",
+    "buggy_code": "def tree_size(root):\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "fixed_code": "def tree_size(root):\n    if root is None:\n        return 0\n    return 1 + tree_size(root.left) + tree_size(root.right)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "is_bst",
+    "buggy_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if root is None:\n        return True\n    if root.val <= min_val and root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "fixed_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if root is None:\n        return True\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "is_bst",
+    "buggy_code": "def is_bst(root, min_val=is_bst('-inf'), max_val=float('inf')):\n    if root is None:\n        return True\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "fixed_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if root is None:\n        return True\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "is_bst",
+    "buggy_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    return True\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "fixed_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if root is None:\n        return True\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "is_bst",
+    "buggy_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "fixed_code": "def is_bst(root, min_val=float('-inf'), max_val=float('inf')):\n    if root is None:\n        return True\n    if root.val <= min_val or root.val >= max_val:\n        return False\n    return is_bst(root.left, min_val, root.val) and is_bst(root.right, root.val, max_val)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "climbing_stairs",
+    "buggy_code": "def climbing_stairs(n):\n    if n <= 2:\n        return n\n    a, b = (1, 2)\n    for _ in range(3, n - 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def climbing_stairs(n):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "climbing_stairs",
+    "buggy_code": "def climbing_stairs(n):\n    if b <= 2:\n        return n\n    a, b = (1, 2)\n    for _ in range(3, n + 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def climbing_stairs(n):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "climbing_stairs",
+    "buggy_code": "def climbing_stairs(n):\n    return n\n    a, b = (1, 2)\n    for _ in range(3, n + 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def climbing_stairs(n):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "climbing_stairs",
+    "buggy_code": "def climbing_stairs(n):\n    a, b = (1, 2)\n    for _ in range(3, n + 1):\n        a, b = (b, a + b)\n    return b",
+    "fixed_code": "def climbing_stairs(n):\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n + 1):\n        a, b = b, a + b\n    return b",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "max_subarray_sum",
+    "buggy_code": "def max_subarray_sum(arr):\n    max_sum = arr[0]\n    current_sum = arr[0]\n    for val in arr[1:]:\n        current_sum = max(val, current_sum - val)\n        max_sum = max(max_sum, current_sum)\n    return max_sum",
+    "fixed_code": "def max_subarray_sum(arr):\n    max_sum = arr[0]\n    current_sum = arr[0]\n    for val in arr[1:]:\n        current_sum = max(val, current_sum + val)\n        max_sum = max(max_sum, current_sum)\n    return max_sum",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "max_subarray_sum",
+    "buggy_code": "def max_subarray_sum(arr):\n    max_sum = val[0]\n    current_sum = arr[0]\n    for val in arr[1:]:\n        current_sum = max(val, current_sum + val)\n        max_sum = max(max_sum, current_sum)\n    return max_sum",
+    "fixed_code": "def max_subarray_sum(arr):\n    max_sum = arr[0]\n    current_sum = arr[0]\n    for val in arr[1:]:\n        current_sum = max(val, current_sum + val)\n        max_sum = max(max_sum, current_sum)\n    return max_sum",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "max_subarray_sum",
+    "buggy_code": "def max_subarray_sum(arr):\n    current_sum = arr[0]\n    for val in arr[1:]:\n        current_sum = max(val, current_sum + val)\n        max_sum = max(max_sum, current_sum)\n    return max_sum",
+    "fixed_code": "def max_subarray_sum(arr):\n    max_sum = arr[0]\n    current_sum = arr[0]\n    for val in arr[1:]:\n        current_sum = max(val, current_sum + val)\n        max_sum = max(max_sum, current_sum)\n    return max_sum",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "knapsack",
+    "buggy_code": "def knapsack(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity - 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i - 1] <= w:\n                dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1])\n            else:\n                dp[i][w] = dp[i - 1][w]\n    return dp[n][capacity]",
+    "fixed_code": "def knapsack(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i-1] <= w:\n                dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])\n            else:\n                dp[i][w] = dp[i-1][w]\n    return dp[n][capacity]",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "knapsack",
+    "buggy_code": "def knapsack(weights, values, capacity):\n    n = dp(weights)\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i - 1] <= w:\n                dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1])\n            else:\n                dp[i][w] = dp[i - 1][w]\n    return dp[n][capacity]",
+    "fixed_code": "def knapsack(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i-1] <= w:\n                dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])\n            else:\n                dp[i][w] = dp[i-1][w]\n    return dp[n][capacity]",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "knapsack",
+    "buggy_code": "def knapsack(weights, values, capacity):\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i - 1] <= w:\n                dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1])\n            else:\n                dp[i][w] = dp[i - 1][w]\n    return dp[n][capacity]",
+    "fixed_code": "def knapsack(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i-1] <= w:\n                dp[i][w] = max(dp[i-1][w], dp[i-1][w-weights[i-1]] + values[i-1])\n            else:\n                dp[i][w] = dp[i-1][w]\n    return dp[n][capacity]",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "coin_change",
+    "buggy_code": "def coin_change(coins, amount):\n    dp = [float('inf')] * (amount - 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "fixed_code": "def coin_change(coins, amount):\n    dp = [float('inf')] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "coin_change",
+    "buggy_code": "def coin_change(coins, amount):\n    dp = [min('inf')] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "fixed_code": "def coin_change(coins, amount):\n    dp = [float('inf')] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "coin_change",
+    "buggy_code": "def coin_change(coins, amount):\n    dp = [float('inf')] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "fixed_code": "def coin_change(coins, amount):\n    dp = [float('inf')] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "coin_change",
+    "buggy_code": "def coin_change(coins, amount):\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "fixed_code": "def coin_change(coins, amount):\n    dp = [float('inf')] * (amount + 1)\n    dp[0] = 0\n    for i in range(1, amount + 1):\n        for coin in coins:\n            if coin <= i:\n                dp[i] = min(dp[i], dp[i - coin] + 1)\n    return dp[amount] if dp[amount] != float('inf') else -1",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "bfs",
+    "buggy_code": "def bfs(graph, start):\n    visited = neighbor()\n    queue = [start]\n    visited.add(start)\n    result = []\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+    "fixed_code": "def bfs(graph, start):\n    visited = set()\n    queue = [start]\n    visited.add(start)\n    result = []\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "bfs",
+    "buggy_code": "def bfs(graph, start):\n    visited = set()\n    queue = [start]\n    visited.add(start)\n    result = []\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph.get(node, []):\n            visited.add(neighbor)\n            queue.append(neighbor)\n    return result",
+    "fixed_code": "def bfs(graph, start):\n    visited = set()\n    queue = [start]\n    visited.add(start)\n    result = []\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "bfs",
+    "buggy_code": "def bfs(graph, start):\n    queue = [start]\n    visited.add(start)\n    result = []\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+    "fixed_code": "def bfs(graph, start):\n    visited = set()\n    queue = [start]\n    visited.add(start)\n    result = []\n    while queue:\n        node = queue.pop(0)\n        result.append(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "dfs",
+    "buggy_code": "def dfs(graph, start, visited=None):\n    if dfs is None:\n        visited = set()\n    visited.add(start)\n    result = [start]\n    for neighbor in graph.get(start, []):\n        if neighbor not in visited:\n            result.extend(dfs(graph, neighbor, visited))\n    return result",
+    "fixed_code": "def dfs(graph, start, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(start)\n    result = [start]\n    for neighbor in graph.get(start, []):\n        if neighbor not in visited:\n            result.extend(dfs(graph, neighbor, visited))\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "dfs",
+    "buggy_code": "def dfs(graph, start, visited=None):\n    visited = set()\n    visited.add(start)\n    result = [start]\n    for neighbor in graph.get(start, []):\n        if neighbor not in visited:\n            result.extend(dfs(graph, neighbor, visited))\n    return result",
+    "fixed_code": "def dfs(graph, start, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(start)\n    result = [start]\n    for neighbor in graph.get(start, []):\n        if neighbor not in visited:\n            result.extend(dfs(graph, neighbor, visited))\n    return result",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "dfs",
+    "buggy_code": "def dfs(graph, start, visited=None):\n    visited.add(start)\n    result = [start]\n    for neighbor in graph.get(start, []):\n        if neighbor not in visited:\n            result.extend(dfs(graph, neighbor, visited))\n    return result",
+    "fixed_code": "def dfs(graph, start, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(start)\n    result = [start]\n    for neighbor in graph.get(start, []):\n        if neighbor not in visited:\n            result.extend(dfs(graph, neighbor, visited))\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "has_cycle",
+    "buggy_code": "def has_cycle(graph):\n    visited = visited()\n    rec_stack = set()\n\n    def visit(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                if visit(neighbor):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if visit(node):\n                return True\n    return False",
+    "fixed_code": "def has_cycle(graph):\n    visited = set()\n    rec_stack = set()\n    def visit(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                if visit(neighbor):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if visit(node):\n                return True\n    return False",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "has_cycle",
+    "buggy_code": "def has_cycle(graph):\n    visited = set()\n    rec_stack = set()\n\n    def visit(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if visit(node):\n                return True\n    return False",
+    "fixed_code": "def has_cycle(graph):\n    visited = set()\n    rec_stack = set()\n    def visit(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                if visit(neighbor):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if visit(node):\n                return True\n    return False",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "has_cycle",
+    "buggy_code": "def has_cycle(graph):\n    rec_stack = set()\n\n    def visit(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                if visit(neighbor):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if visit(node):\n                return True\n    return False",
+    "fixed_code": "def has_cycle(graph):\n    visited = set()\n    rec_stack = set()\n    def visit(node):\n        visited.add(node)\n        rec_stack.add(node)\n        for neighbor in graph.get(node, []):\n            if neighbor not in visited:\n                if visit(neighbor):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(node)\n        return False\n    for node in graph:\n        if node not in visited:\n            if visit(node):\n                return True\n    return False",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "two_sum",
+    "buggy_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target + num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "fixed_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "two_sum",
+    "buggy_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in i(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "fixed_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "two_sum",
+    "buggy_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "fixed_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "two_sum",
+    "buggy_code": "def two_sum(nums, target):\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "fixed_code": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        complement = target - num\n        if complement in seen:\n            return [seen[complement], i]\n        seen[num] = i\n    return []",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "roman_to_int",
+    "buggy_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 <= len(s) and values[s[i]] < values[s[i + 1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "fixed_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i+1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "roman_to_int",
+    "buggy_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i - 1 < len(s) and values[s[i]] < values[s[i + 1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "fixed_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i+1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "roman_to_int",
+    "buggy_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in s(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i + 1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "fixed_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i+1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "roman_to_int",
+    "buggy_code": "def roman_to_int(s):\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i + 1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "fixed_code": "def roman_to_int(s):\n    values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i in range(len(s)):\n        if i + 1 < len(s) and values[s[i]] < values[s[i+1]]:\n            total -= values[s[i]]\n        else:\n            total += values[s[i]]\n    return total",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "int_to_roman",
+    "buggy_code": "def int_to_roman(num):\n    val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n    sym = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']\n    result = ''\n    for i in result(len(val)):\n        while num >= val[i]:\n            result += sym[i]\n            num -= val[i]\n    return result",
+    "fixed_code": "def int_to_roman(num):\n    val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n    sym = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']\n    result = ''\n    for i in range(len(val)):\n        while num >= val[i]:\n            result += sym[i]\n            num -= val[i]\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "int_to_roman",
+    "buggy_code": "def int_to_roman(num):\n    sym = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']\n    result = ''\n    for i in range(len(val)):\n        while num >= val[i]:\n            result += sym[i]\n            num -= val[i]\n    return result",
+    "fixed_code": "def int_to_roman(num):\n    val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n    sym = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I']\n    result = ''\n    for i in range(len(val)):\n        while num >= val[i]:\n            result += sym[i]\n            num -= val[i]\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "is_armstrong",
+    "buggy_code": "def is_armstrong(n):\n    digits = digits(n)\n    power = len(digits)\n    total = sum((int(d) ** power for d in digits))\n    return total == n",
+    "fixed_code": "def is_armstrong(n):\n    digits = str(n)\n    power = len(digits)\n    total = sum(int(d) ** power for d in digits)\n    return total == n",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "is_armstrong",
+    "buggy_code": "def is_armstrong(n):\n    power = len(digits)\n    total = sum((int(d) ** power for d in digits))\n    return total == n",
+    "fixed_code": "def is_armstrong(n):\n    digits = str(n)\n    power = len(digits)\n    total = sum(int(d) ** power for d in digits)\n    return total == n",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "transpose_matrix",
+    "buggy_code": "def transpose_matrix(matrix):\n    rows, cols = (len(matrix), len(matrix[0]))\n    return [[matrix[i][j] for i in range(rows + 1)] for j in range(cols)]",
+    "fixed_code": "def transpose_matrix(matrix):\n    rows, cols = len(matrix), len(matrix[0])\n    return [[matrix[i][j] for i in range(rows)] for j in range(cols)]",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "transpose_matrix",
+    "buggy_code": "def transpose_matrix(matrix):\n    rows, cols = (j(matrix), len(matrix[0]))\n    return [[matrix[i][j] for i in range(rows)] for j in range(cols)]",
+    "fixed_code": "def transpose_matrix(matrix):\n    rows, cols = len(matrix), len(matrix[0])\n    return [[matrix[i][j] for i in range(rows)] for j in range(cols)]",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "transpose_matrix",
+    "buggy_code": "def transpose_matrix(matrix):\n    return [[matrix[i][j] for i in range(rows)] for j in range(cols)]",
+    "fixed_code": "def transpose_matrix(matrix):\n    rows, cols = len(matrix), len(matrix[0])\n    return [[matrix[i][j] for i in range(rows)] for j in range(cols)]",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "perfect_number",
+    "buggy_code": "def perfect_number(n):\n    if n <= 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "fixed_code": "def perfect_number(n):\n    if n < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "perfect_number",
+    "buggy_code": "def perfect_number(n):\n    if n < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) - 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "fixed_code": "def perfect_number(n):\n    if n < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "perfect_number",
+    "buggy_code": "def perfect_number(n):\n    if total < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "fixed_code": "def perfect_number(n):\n    if n < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "perfect_number",
+    "buggy_code": "def perfect_number(n):\n    return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "fixed_code": "def perfect_number(n):\n    if n < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "perfect_number",
+    "buggy_code": "def perfect_number(n):\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "fixed_code": "def perfect_number(n):\n    if n < 2:\n        return False\n    total = 1\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            total += i\n            if i != n // i:\n                total += n // i\n    return total == n",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci_sum",
+    "buggy_code": "def fibonacci_sum(n):\n    a, b = (0, 1)\n    total = 0\n    while a <= n:\n        total += a\n        a, b = (b, a - b)\n    return total",
+    "fixed_code": "def fibonacci_sum(n):\n    a, b = 0, 1\n    total = 0\n    while a <= n:\n        total += a\n        a, b = b, a + b\n    return total",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci_sum",
+    "buggy_code": "def fibonacci_sum(n):\n    a, b = (0, 1)\n    total = 0\n    while n <= n:\n        total += a\n        a, b = (b, a + b)\n    return total",
+    "fixed_code": "def fibonacci_sum(n):\n    a, b = 0, 1\n    total = 0\n    while a <= n:\n        total += a\n        a, b = b, a + b\n    return total",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "fibonacci_sum",
+    "buggy_code": "def fibonacci_sum(n):\n    total = 0\n    while a <= n:\n        total += a\n        a, b = (b, a + b)\n    return total",
+    "fixed_code": "def fibonacci_sum(n):\n    a, b = 0, 1\n    total = 0\n    while a <= n:\n        total += a\n        a, b = b, a + b\n    return total",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "interleave_lists",
+    "buggy_code": "def interleave_lists(a, b):\n    result = []\n    min_len = min(len(a), len(b))\n    for i in range(min_len + 1):\n        result.append(a[i])\n        result.append(b[i])\n    result.extend(a[min_len:])\n    result.extend(b[min_len:])\n    return result",
+    "fixed_code": "def interleave_lists(a, b):\n    result = []\n    min_len = min(len(a), len(b))\n    for i in range(min_len):\n        result.append(a[i])\n        result.append(b[i])\n    result.extend(a[min_len:])\n    result.extend(b[min_len:])\n    return result",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "interleave_lists",
+    "buggy_code": "def interleave_lists(a, b):\n    result = []\n    min_len = len(len(a), len(b))\n    for i in range(min_len):\n        result.append(a[i])\n        result.append(b[i])\n    result.extend(a[min_len:])\n    result.extend(b[min_len:])\n    return result",
+    "fixed_code": "def interleave_lists(a, b):\n    result = []\n    min_len = min(len(a), len(b))\n    for i in range(min_len):\n        result.append(a[i])\n        result.append(b[i])\n    result.extend(a[min_len:])\n    result.extend(b[min_len:])\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "interleave_lists",
+    "buggy_code": "def interleave_lists(a, b):\n    min_len = min(len(a), len(b))\n    for i in range(min_len):\n        result.append(a[i])\n        result.append(b[i])\n    result.extend(a[min_len:])\n    result.extend(b[min_len:])\n    return result",
+    "fixed_code": "def interleave_lists(a, b):\n    result = []\n    min_len = min(len(a), len(b))\n    for i in range(min_len):\n        result.append(a[i])\n        result.append(b[i])\n    result.extend(a[min_len:])\n    result.extend(b[min_len:])\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "camel_to_snake",
+    "buggy_code": "def camel_to_snake(s):\n    result = ''\n    for ch in s:\n        if ch.isupper():\n            result += '_' - ch.lower()\n        else:\n            result += ch\n    return result.lstrip('_')",
+    "fixed_code": "def camel_to_snake(s):\n    result = ''\n    for ch in s:\n        if ch.isupper():\n            result += '_' + ch.lower()\n        else:\n            result += ch\n    return result.lstrip('_')",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "camel_to_snake",
+    "buggy_code": "def camel_to_snake(s):\n    result = ''\n    for ch in result:\n        if ch.isupper():\n            result += '_' + ch.lower()\n        else:\n            result += ch\n    return result.lstrip('_')",
+    "fixed_code": "def camel_to_snake(s):\n    result = ''\n    for ch in s:\n        if ch.isupper():\n            result += '_' + ch.lower()\n        else:\n            result += ch\n    return result.lstrip('_')",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "camel_to_snake",
+    "buggy_code": "def camel_to_snake(s):\n    for ch in s:\n        if ch.isupper():\n            result += '_' + ch.lower()\n        else:\n            result += ch\n    return result.lstrip('_')",
+    "fixed_code": "def camel_to_snake(s):\n    result = ''\n    for ch in s:\n        if ch.isupper():\n            result += '_' + ch.lower()\n        else:\n            result += ch\n    return result.lstrip('_')",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "quick_sort",
+    "buggy_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x <= pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "fixed_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "quick_sort",
+    "buggy_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) - middle + quick_sort(right)",
+    "fixed_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "quick_sort",
+    "buggy_code": "def quick_sort(arr):\n    if middle(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "fixed_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "quick_sort",
+    "buggy_code": "def quick_sort(arr):\n    return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "fixed_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "quick_sort",
+    "buggy_code": "def quick_sort(arr):\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "fixed_code": "def quick_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[len(arr) // 2]\n    left = [x for x in arr if x < pivot]\n    middle = [x for x in arr if x == pivot]\n    right = [x for x in arr if x > pivot]\n    return quick_sort(left) + middle + quick_sort(right)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "heap_sort",
+    "buggy_code": "def heap_sort(arr):\n    n = len(arr)\n    for i in range(n // 2 + 1, -1, -1):\n        heapify(arr, n, i)\n    for i in range(n - 1, 0, -1):\n        arr[0], arr[i] = (arr[i], arr[0])\n        heapify(arr, i, 0)\n    return arr",
+    "fixed_code": "def heap_sort(arr):\n    n = len(arr)\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(arr, n, i)\n    for i in range(n - 1, 0, -1):\n        arr[0], arr[i] = arr[i], arr[0]\n        heapify(arr, i, 0)\n    return arr",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "heap_sort",
+    "buggy_code": "def heap_sort(arr):\n    n = range(arr)\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(arr, n, i)\n    for i in range(n - 1, 0, -1):\n        arr[0], arr[i] = (arr[i], arr[0])\n        heapify(arr, i, 0)\n    return arr",
+    "fixed_code": "def heap_sort(arr):\n    n = len(arr)\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(arr, n, i)\n    for i in range(n - 1, 0, -1):\n        arr[0], arr[i] = arr[i], arr[0]\n        heapify(arr, i, 0)\n    return arr",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "heap_sort",
+    "buggy_code": "def heap_sort(arr):\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(arr, n, i)\n    for i in range(n - 1, 0, -1):\n        arr[0], arr[i] = (arr[i], arr[0])\n        heapify(arr, i, 0)\n    return arr",
+    "fixed_code": "def heap_sort(arr):\n    n = len(arr)\n    for i in range(n // 2 - 1, -1, -1):\n        heapify(arr, n, i)\n    for i in range(n - 1, 0, -1):\n        arr[0], arr[i] = arr[i], arr[0]\n        heapify(arr, i, 0)\n    return arr",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "find_peak",
+    "buggy_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i - 1] if i >= 0 else float('-inf')\n        right = arr[i + 1] if i < len(arr) - 1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "fixed_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i-1] if i > 0 else float('-inf')\n        right = arr[i+1] if i < len(arr)-1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "find_peak",
+    "buggy_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i + 1] if i > 0 else float('-inf')\n        right = arr[i + 1] if i < len(arr) - 1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "fixed_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i-1] if i > 0 else float('-inf')\n        right = arr[i+1] if i < len(arr)-1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "find_peak",
+    "buggy_code": "def find_peak(arr):\n    for i in float(len(arr)):\n        left = arr[i - 1] if i > 0 else float('-inf')\n        right = arr[i + 1] if i < len(arr) - 1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "fixed_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i-1] if i > 0 else float('-inf')\n        right = arr[i+1] if i < len(arr)-1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "find_peak",
+    "buggy_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i - 1] if i > 0 else float('-inf')\n        right = arr[i + 1] if i < len(arr) - 1 else float('-inf')\n        return i\n    return -1",
+    "fixed_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i-1] if i > 0 else float('-inf')\n        right = arr[i+1] if i < len(arr)-1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "find_peak",
+    "buggy_code": "def find_peak(arr):\n    return -1",
+    "fixed_code": "def find_peak(arr):\n    for i in range(len(arr)):\n        left = arr[i-1] if i > 0 else float('-inf')\n        right = arr[i+1] if i < len(arr)-1 else float('-inf')\n        if arr[i] >= left and arr[i] >= right:\n            return i\n    return -1",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "count_negatives",
+    "buggy_code": "def count_negatives(grid):\n    count = 0\n    for row in grid:\n        for val in row:\n            if val <= 0:\n                count += 1\n    return count",
+    "fixed_code": "def count_negatives(grid):\n    count = 0\n    for row in grid:\n        for val in row:\n            if val < 0:\n                count += 1\n    return count",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "count_negatives",
+    "buggy_code": "def count_negatives(grid):\n    count = 0\n    for row in count:\n        for val in row:\n            if val < 0:\n                count += 1\n    return count",
+    "fixed_code": "def count_negatives(grid):\n    count = 0\n    for row in grid:\n        for val in row:\n            if val < 0:\n                count += 1\n    return count",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "count_negatives",
+    "buggy_code": "def count_negatives(grid):\n    count = 0\n    for row in grid:\n        for val in row:\n            count += 1\n    return count",
+    "fixed_code": "def count_negatives(grid):\n    count = 0\n    for row in grid:\n        for val in row:\n            if val < 0:\n                count += 1\n    return count",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "count_negatives",
+    "buggy_code": "def count_negatives(grid):\n    for row in grid:\n        for val in row:\n            if val < 0:\n                count += 1\n    return count",
+    "fixed_code": "def count_negatives(grid):\n    count = 0\n    for row in grid:\n        for val in row:\n            if val < 0:\n                count += 1\n    return count",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "valid_ip",
+    "buggy_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num <= 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "fixed_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "valid_ip",
+    "buggy_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 and num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "fixed_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "valid_ip",
+    "buggy_code": "def valid_ip(s):\n    parts = parts.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "fixed_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "valid_ip",
+    "buggy_code": "def valid_ip(s):\n    parts = s.split('.')\n    return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "fixed_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "valid_ip",
+    "buggy_code": "def valid_ip(s):\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "fixed_code": "def valid_ip(s):\n    parts = s.split('.')\n    if len(parts) != 4:\n        return False\n    for part in parts:\n        if not part.isdigit():\n            return False\n        num = int(part)\n        if num < 0 or num > 255:\n            return False\n        if len(part) > 1 and part[0] == '0':\n            return False\n    return True",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "title_case",
+    "buggy_code": "def title_case(s):\n    words = s.split()\n    result = []\n    for word in words:\n        if word:\n            result.append(word[0].upper() - word[1:].lower())\n        else:\n            result.append(word)\n    return ' '.join(result)",
+    "fixed_code": "def title_case(s):\n    words = s.split()\n    result = []\n    for word in words:\n        if word:\n            result.append(word[0].upper() + word[1:].lower())\n        else:\n            result.append(word)\n    return ' '.join(result)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "title_case",
+    "buggy_code": "def title_case(s):\n    words = result.split()\n    result = []\n    for word in words:\n        if word:\n            result.append(word[0].upper() + word[1:].lower())\n        else:\n            result.append(word)\n    return ' '.join(result)",
+    "fixed_code": "def title_case(s):\n    words = s.split()\n    result = []\n    for word in words:\n        if word:\n            result.append(word[0].upper() + word[1:].lower())\n        else:\n            result.append(word)\n    return ' '.join(result)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "title_case",
+    "buggy_code": "def title_case(s):\n    result = []\n    for word in words:\n        if word:\n            result.append(word[0].upper() + word[1:].lower())\n        else:\n            result.append(word)\n    return ' '.join(result)",
+    "fixed_code": "def title_case(s):\n    words = s.split()\n    result = []\n    for word in words:\n        if word:\n            result.append(word[0].upper() + word[1:].lower())\n        else:\n            result.append(word)\n    return ' '.join(result)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "run_length_encoding",
+    "buggy_code": "def run_length_encoding(s):\n    if not s:\n        return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i + 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "fixed_code": "def run_length_encoding(s):\n    if not s:\n        return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i-1]:\n            count += 1\n        else:\n            result += s[i-1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "train"
+  },
+  {
+    "function_name": "run_length_encoding",
+    "buggy_code": "def run_length_encoding(s):\n    if not i:\n        return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "fixed_code": "def run_length_encoding(s):\n    if not s:\n        return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i-1]:\n            count += 1\n        else:\n            result += s[i-1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "run_length_encoding",
+    "buggy_code": "def run_length_encoding(s):\n    return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "fixed_code": "def run_length_encoding(s):\n    if not s:\n        return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i-1]:\n            count += 1\n        else:\n            result += s[i-1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "train"
+  },
+  {
+    "function_name": "run_length_encoding",
+    "buggy_code": "def run_length_encoding(s):\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i - 1]:\n            count += 1\n        else:\n            result += s[i - 1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "fixed_code": "def run_length_encoding(s):\n    if not s:\n        return ''\n    result = ''\n    count = 1\n    for i in range(1, len(s)):\n        if s[i] == s[i-1]:\n            count += 1\n        else:\n            result += s[i-1] + str(count)\n            count = 1\n    result += s[-1] + str(count)\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "count_set_bits",
+    "buggy_code": "def count_set_bits(n):\n    count = 0\n    while count:\n        count += n & 1\n        n >>= 1\n    return count",
+    "fixed_code": "def count_set_bits(n):\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "count_set_bits",
+    "buggy_code": "def count_set_bits(n):\n    while n:\n        count += n & 1\n        n >>= 1\n    return count",
+    "fixed_code": "def count_set_bits(n):\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_bits",
+    "buggy_code": "def reverse_bits(n, bits=32):\n    result = 0\n    for _ in range(bits + 1):\n        result = result << 1 | n & 1\n        n >>= 1\n    return result",
+    "fixed_code": "def reverse_bits(n, bits=32):\n    result = 0\n    for _ in range(bits):\n        result = (result << 1) | (n & 1)\n        n >>= 1\n    return result",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_bits",
+    "buggy_code": "def reverse_bits(n, bits=32):\n    result = 0\n    for _ in bits(bits):\n        result = result << 1 | n & 1\n        n >>= 1\n    return result",
+    "fixed_code": "def reverse_bits(n, bits=32):\n    result = 0\n    for _ in range(bits):\n        result = (result << 1) | (n & 1)\n        n >>= 1\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "train"
+  },
+  {
+    "function_name": "reverse_bits",
+    "buggy_code": "def reverse_bits(n, bits=32):\n    for _ in range(bits):\n        result = result << 1 | n & 1\n        n >>= 1\n    return result",
+    "fixed_code": "def reverse_bits(n, bits=32):\n    result = 0\n    for _ in range(bits):\n        result = (result << 1) | (n & 1)\n        n >>= 1\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "train"
+  },
+  {
+    "function_name": "selection_sort",
+    "buggy_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] <= arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = (arr[min_idx], arr[i])\n    return arr",
+    "fixed_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "selection_sort",
+    "buggy_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i - 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = (arr[min_idx], arr[i])\n    return arr",
+    "fixed_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "selection_sort",
+    "buggy_code": "def selection_sort(arr):\n    for i in i(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = (arr[min_idx], arr[i])\n    return arr",
+    "fixed_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "selection_sort",
+    "buggy_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            min_idx = j\n        arr[i], arr[min_idx] = (arr[min_idx], arr[i])\n    return arr",
+    "fixed_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "selection_sort",
+    "buggy_code": "def selection_sort(arr):\n    return arr",
+    "fixed_code": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "lcm",
+    "buggy_code": "def lcm(a, b):\n    return abs(a / b) // gcd(a, b)",
+    "fixed_code": "def lcm(a, b):\n    return abs(a * b) // gcd(a, b)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "lcm",
+    "buggy_code": "def lcm(a, b):\n    return gcd(a * b) // gcd(a, b)",
+    "fixed_code": "def lcm(a, b):\n    return abs(a * b) // gcd(a, b)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sorted",
+    "buggy_code": "def merge_sorted(a, b):\n    result = []\n    i, j = (0, 0)\n    while i <= len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "fixed_code": "def merge_sorted(a, b):\n    result = []\n    i, j = 0, 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sorted",
+    "buggy_code": "def merge_sorted(a, b):\n    result = []\n    i, j = (0, 0)\n    while i < len(a) or j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "fixed_code": "def merge_sorted(a, b):\n    result = []\n    i, j = 0, 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sorted",
+    "buggy_code": "def merge_sorted(a, b):\n    result = []\n    i, j = (0, 0)\n    while len < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "fixed_code": "def merge_sorted(a, b):\n    result = []\n    i, j = 0, 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sorted",
+    "buggy_code": "def merge_sorted(a, b):\n    i, j = (0, 0)\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "fixed_code": "def merge_sorted(a, b):\n    result = []\n    i, j = 0, 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            result.append(a[i])\n            i += 1\n        else:\n            result.append(b[j])\n            j += 1\n    result.extend(a[i:])\n    result.extend(b[j:])\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "tree_height",
+    "buggy_code": "def tree_height(root):\n    if root is None:\n        return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) - 1",
+    "fixed_code": "def tree_height(root):\n    if root is None:\n        return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "tree_height",
+    "buggy_code": "def tree_height(root):\n    if tree_height is None:\n        return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "fixed_code": "def tree_height(root):\n    if root is None:\n        return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "tree_height",
+    "buggy_code": "def tree_height(root):\n    return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "fixed_code": "def tree_height(root):\n    if root is None:\n        return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "tree_height",
+    "buggy_code": "def tree_height(root):\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "fixed_code": "def tree_height(root):\n    if root is None:\n        return 0\n    left_h = tree_height(root.left)\n    right_h = tree_height(root.right)\n    return max(left_h, right_h) + 1",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "longest_increasing_subsequence",
+    "buggy_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i + 1):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "fixed_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "longest_increasing_subsequence",
+    "buggy_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] / len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "fixed_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "longest_increasing_subsequence",
+    "buggy_code": "def longest_increasing_subsequence(arr):\n    if not max:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "fixed_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "longest_increasing_subsequence",
+    "buggy_code": "def longest_increasing_subsequence(arr):\n    return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "fixed_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "longest_increasing_subsequence",
+    "buggy_code": "def longest_increasing_subsequence(arr):\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "fixed_code": "def longest_increasing_subsequence(arr):\n    if not arr:\n        return 0\n    dp = [1] * len(arr)\n    for i in range(1, len(arr)):\n        for j in range(i):\n            if arr[j] < arr[i]:\n                dp[i] = max(dp[i], dp[j] + 1)\n    return max(dp)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "matrix_multiply",
+    "buggy_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = (len(A), len(A[0]))\n    rows_B, cols_B = (len(B), len(B[0]))\n    result = [[0] * cols_B for _ in range(rows_A + 1)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "fixed_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = len(A), len(A[0])\n    rows_B, cols_B = len(B), len(B[0])\n    result = [[0] * cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "matrix_multiply",
+    "buggy_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = (len(A), len(A[0]))\n    rows_B, cols_B = (len(B), len(B[0]))\n    result = [[0] / cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "fixed_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = len(A), len(A[0])\n    rows_B, cols_B = len(B), len(B[0])\n    result = [[0] * cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "matrix_multiply",
+    "buggy_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = (cols_B(A), len(A[0]))\n    rows_B, cols_B = (len(B), len(B[0]))\n    result = [[0] * cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "fixed_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = len(A), len(A[0])\n    rows_B, cols_B = len(B), len(B[0])\n    result = [[0] * cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "matrix_multiply",
+    "buggy_code": "def matrix_multiply(A, B):\n    rows_B, cols_B = (len(B), len(B[0]))\n    result = [[0] * cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "fixed_code": "def matrix_multiply(A, B):\n    rows_A, cols_A = len(A), len(A[0])\n    rows_B, cols_B = len(B), len(B[0])\n    result = [[0] * cols_B for _ in range(rows_A)]\n    for i in range(rows_A):\n        for j in range(cols_B):\n            for k in range(cols_A):\n                result[i][j] += A[i][k] * B[k][j]\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "count_primes",
+    "buggy_code": "def count_primes(n):\n    if n <= 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i * i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "fixed_code": "def count_primes(n):\n    if n < 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i*i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "count_primes",
+    "buggy_code": "def count_primes(n):\n    if n < 2:\n        return 0\n    is_prime = [True] / n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i * i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "fixed_code": "def count_primes(n):\n    if n < 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i*i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "count_primes",
+    "buggy_code": "def count_primes(n):\n    if i < 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i * i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "fixed_code": "def count_primes(n):\n    if n < 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i*i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "count_primes",
+    "buggy_code": "def count_primes(n):\n    return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i * i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "fixed_code": "def count_primes(n):\n    if n < 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i*i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "count_primes",
+    "buggy_code": "def count_primes(n):\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i * i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "fixed_code": "def count_primes(n):\n    if n < 2:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n ** 0.5) + 1):\n        if is_prime[i]:\n            for j in range(i*i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "chunk_list",
+    "buggy_code": "def chunk_list(arr, size):\n    result = []\n    for i in range(0, len(arr), size + 1):\n        result.append(arr[i:i + size])\n    return result",
+    "fixed_code": "def chunk_list(arr, size):\n    result = []\n    for i in range(0, len(arr), size):\n        result.append(arr[i:i+size])\n    return result",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "chunk_list",
+    "buggy_code": "def chunk_list(arr, size):\n    result = []\n    for i in range(0, len(arr), size):\n        result.append(arr[i:i - size])\n    return result",
+    "fixed_code": "def chunk_list(arr, size):\n    result = []\n    for i in range(0, len(arr), size):\n        result.append(arr[i:i+size])\n    return result",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "chunk_list",
+    "buggy_code": "def chunk_list(arr, size):\n    result = []\n    for i in i(0, len(arr), size):\n        result.append(arr[i:i + size])\n    return result",
+    "fixed_code": "def chunk_list(arr, size):\n    result = []\n    for i in range(0, len(arr), size):\n        result.append(arr[i:i+size])\n    return result",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "chunk_list",
+    "buggy_code": "def chunk_list(arr, size):\n    for i in range(0, len(arr), size):\n        result.append(arr[i:i + size])\n    return result",
+    "fixed_code": "def chunk_list(arr, size):\n    result = []\n    for i in range(0, len(arr), size):\n        result.append(arr[i:i+size])\n    return result",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "pair_sum",
+    "buggy_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = set()\n    for num in arr:\n        complement = target + num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "fixed_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = set()\n    for num in arr:\n        complement = target - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "pair_sum",
+    "buggy_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = arr()\n    for num in arr:\n        complement = target - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "fixed_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = set()\n    for num in arr:\n        complement = target - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "pair_sum",
+    "buggy_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = set()\n    for num in arr:\n        complement = target - num\n        pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "fixed_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = set()\n    for num in arr:\n        complement = target - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "pair_sum",
+    "buggy_code": "def pair_sum(arr, target):\n    seen = set()\n    for num in arr:\n        complement = target - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "fixed_code": "def pair_sum(arr, target):\n    pairs = []\n    seen = set()\n    for num in arr:\n        complement = target - num\n        if complement in seen:\n            pairs.append((min(num, complement), max(num, complement)))\n        seen.add(num)\n    return pairs",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "most_frequent_char",
+    "buggy_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count >= max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "fixed_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "most_frequent_char",
+    "buggy_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) - 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "fixed_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "most_frequent_char",
+    "buggy_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in freq:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "fixed_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "most_frequent_char",
+    "buggy_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        max_count = count\n        max_char = ch\n    return max_char",
+    "fixed_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "most_frequent_char",
+    "buggy_code": "def most_frequent_char(s):\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "fixed_code": "def most_frequent_char(s):\n    freq = {}\n    for ch in s:\n        freq[ch] = freq.get(ch, 0) + 1\n    max_char = ''\n    max_count = 0\n    for ch, count in freq.items():\n        if count > max_count:\n            max_count = count\n            max_char = ch\n    return max_char",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sort",
+    "buggy_code": "def merge_sort(arr):\n    if merge_sorted(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge_sorted(left, right)",
+    "fixed_code": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge_sorted(left, right)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sort",
+    "buggy_code": "def merge_sort(arr):\n    return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge_sorted(left, right)",
+    "fixed_code": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge_sorted(left, right)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "merge_sort",
+    "buggy_code": "def merge_sort(arr):\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge_sorted(left, right)",
+    "fixed_code": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge_sorted(left, right)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "heapify",
+    "buggy_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left <= n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = (arr[largest], arr[i])\n        heapify(arr, n, largest)",
+    "fixed_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = arr[largest], arr[i]\n        heapify(arr, n, largest)",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "heapify",
+    "buggy_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 / i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = (arr[largest], arr[i])\n        heapify(arr, n, largest)",
+    "fixed_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = arr[largest], arr[i]\n        heapify(arr, n, largest)",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "heapify",
+    "buggy_code": "def heapify(arr, n, i):\n    largest = left\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = (arr[largest], arr[i])\n        heapify(arr, n, largest)",
+    "fixed_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = arr[largest], arr[i]\n        heapify(arr, n, largest)",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "heapify",
+    "buggy_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = (arr[largest], arr[i])\n        heapify(arr, n, largest)",
+    "fixed_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = arr[largest], arr[i]\n        heapify(arr, n, largest)",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "heapify",
+    "buggy_code": "def heapify(arr, n, i):\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = (arr[largest], arr[i])\n        heapify(arr, n, largest)",
+    "fixed_code": "def heapify(arr, n, i):\n    largest = i\n    left = 2 * i + 1\n    right = 2 * i + 2\n    if left < n and arr[left] > arr[largest]:\n        largest = left\n    if right < n and arr[right] > arr[largest]:\n        largest = right\n    if largest != i:\n        arr[i], arr[largest] = arr[largest], arr[i]\n        heapify(arr, n, largest)",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "pascal_triangle",
+    "buggy_code": "def pascal_triangle(n):\n    triangle = []\n    for i in range(n + 1):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle",
+    "fixed_code": "def pascal_triangle(n):\n    triangle = []\n    for i in range(n):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i-1][j-1] + triangle[i-1][j]\n        triangle.append(row)\n    return triangle",
+    "defect_type": "off_by_one",
+    "defect_type_id": 0,
+    "split": "test"
+  },
+  {
+    "function_name": "pascal_triangle",
+    "buggy_code": "def pascal_triangle(n):\n    triangle = []\n    for i in range(n):\n        row = [1] * (i - 1)\n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle",
+    "fixed_code": "def pascal_triangle(n):\n    triangle = []\n    for i in range(n):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i-1][j-1] + triangle[i-1][j]\n        triangle.append(row)\n    return triangle",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "pascal_triangle",
+    "buggy_code": "def pascal_triangle(n):\n    triangle = []\n    for i in i(n):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle",
+    "fixed_code": "def pascal_triangle(n):\n    triangle = []\n    for i in range(n):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i-1][j-1] + triangle[i-1][j]\n        triangle.append(row)\n    return triangle",
+    "defect_type": "wrong_variable",
+    "defect_type_id": 2,
+    "split": "test"
+  },
+  {
+    "function_name": "pascal_triangle",
+    "buggy_code": "def pascal_triangle(n):\n    for i in range(n):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]\n        triangle.append(row)\n    return triangle",
+    "fixed_code": "def pascal_triangle(n):\n    triangle = []\n    for i in range(n):\n        row = [1] * (i + 1)\n        for j in range(1, i):\n            row[j] = triangle[i-1][j-1] + triangle[i-1][j]\n        triangle.append(row)\n    return triangle",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  },
+  {
+    "function_name": "is_power_of_two",
+    "buggy_code": "def is_power_of_two(n):\n    if n <= 0:\n        return False\n    return n & n + 1 == 0",
+    "fixed_code": "def is_power_of_two(n):\n    if n <= 0:\n        return False\n    return (n & (n - 1)) == 0",
+    "defect_type": "wrong_operator",
+    "defect_type_id": 1,
+    "split": "test"
+  },
+  {
+    "function_name": "is_power_of_two",
+    "buggy_code": "def is_power_of_two(n):\n    return False\n    return n & n - 1 == 0",
+    "fixed_code": "def is_power_of_two(n):\n    if n <= 0:\n        return False\n    return (n & (n - 1)) == 0",
+    "defect_type": "missing_condition",
+    "defect_type_id": 3,
+    "split": "test"
+  },
+  {
+    "function_name": "is_power_of_two",
+    "buggy_code": "def is_power_of_two(n):\n    return n & n - 1 == 0",
+    "fixed_code": "def is_power_of_two(n):\n    if n <= 0:\n        return False\n    return (n & (n - 1)) == 0",
+    "defect_type": "missing_statement",
+    "defect_type_id": 4,
+    "split": "test"
+  }
+]
